@@ -29,19 +29,23 @@ public class authentificationservlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String l=request.getParameter("l");
-		String p=request.getParameter("p");
-		PrintWriter out=response.getWriter();
-		System.out.println('if (l<>dsi && p<>dsi) then')
-		
+
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+	String l=request.getParameter("l");
+	String p=request.getParameter("p");
+	PrintWriter out=response.getWriter();
+	if(l.equals("dsi")&& p.equals("dsi"))
+	{
+        response.sendRedirect("entre.html");
 	}
+	else {
+	     response.sendRedirect("error.html");
+	}
+}
 
 }
